@@ -1,0 +1,35 @@
+{
+  "matching_precedence": [
+    "Tier 1: Exact Unique Match on Invoice ID / Payment Reference",
+    "Tier 2: Provider Transaction ID match",
+    "Tier 3: Composite match on Customer Reference + Currency + Amount window"
+  ],
+  "clean_fixtures": {
+    "INV-2024-001": {"expected_payment": "PAY-001", "expected_status": "MATCHED", "tier": 1},
+    "INV-2024-002": {"expected_payment": "PAY-002", "expected_status": "MATCHED", "tier": 1},
+    "INV-2024-003": {"expected_payment": "PAY-003", "expected_status": "MATCHED", "tier": 1}
+  },
+  "mismatch_fixtures": {
+    "INV-ERR-001": {
+      "expected_payment": "PAY-ERR-001",
+      "expected_status": "FEE_MISMATCH",
+      "difference": "3.00",
+      "notes": "Gross payment was 97.00, fee was 3.00, total invoice 100.00"
+    },
+    "INV-ERR-002": {
+      "expected_payment": "PAY-ERR-002",
+      "expected_status": "CURRENCY_MISMATCH",
+      "notes": "Invoice in EUR, payment in USD"
+    },
+    "INV-ERR-003": {
+      "expected_payment": null,
+      "expected_status": "PAYMENT_NOT_FOUND",
+      "notes": "No matching payment record in file"
+    },
+    "PAY-ORPHAN-999": {
+      "expected_invoice": null,
+      "expected_status": "INVOICE_NOT_FOUND",
+      "notes": "Payment without associated invoice"
+    }
+  }
+}

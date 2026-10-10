@@ -1,0 +1,5 @@
+payment_id,invoice_reference,customer_reference,paid_at,currency,gross_amount,fee_amount,net_amount,provider_status
+PAY-ERR-001,INV-ERR-001,CUST-DELTA,2024-10-03T09:30:00Z,USD,97.00,3.00,94.00,succeeded
+PAY-ERR-002,INV-ERR-002,CUST-EPSILON,2024-10-03T10:15:00Z,USD,200.00,0.00,200.00,succeeded
+PAY-ERR-004,INV-ERR-004,CUST-ETA,2024-10-03T12:30:00Z,USD,350.00,0.00,350.00,succeeded
+PAY-ORPHAN-999,,CUST-UNKNOWN,2024-10-03T18:00:00Z,USD,75.00,0.00,75.00,succeeded

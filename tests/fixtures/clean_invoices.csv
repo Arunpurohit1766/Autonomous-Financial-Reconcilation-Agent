@@ -1,0 +1,4 @@
+invoice_id,customer_reference,issued_at,currency,subtotal,tax_amount,discount_amount,total_amount,payment_reference
+INV-2024-001,CUST-ALPHA,2024-10-01T10:00:00Z,USD,1000.00,0.00,0.00,1000.00,PAY-REF-001
+INV-2024-002,CUST-BETA,2024-10-01T11:30:00Z,USD,250.00,20.00,0.00,270.00,PAY-REF-002
+INV-2024-003,CUST-GAMMA,2024-10-02T14:15:00Z,USD,500.00,0.00,50.00,450.00,PAY-REF-003

@@ -1,0 +1,4 @@
+payment_id,invoice_reference,customer_reference,paid_at,currency,gross_amount,fee_amount,net_amount,provider_status
+PAY-001,INV-2024-001,CUST-ALPHA,2024-10-01T12:00:00Z,USD,1000.00,0.00,1000.00,succeeded
+PAY-002,INV-2024-002,CUST-BETA,2024-10-01T13:45:00Z,USD,270.00,0.00,270.00,succeeded
+PAY-003,INV-2024-003,CUST-GAMMA,2024-10-02T15:00:00Z,USD,450.00,0.00,450.00,succeeded
