@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  afra-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afra_reconciliation_agent
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - LOG_LEVEL=INFO
+      - API_AUTH_KEY=key_admin_alpha
+      - DATABASE_URL=sqlite:////app/local_storage/reconciliation.db
+    volumes:
+      - afra_storage:/app/local_storage
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/live"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  afra_storage:
+    driver: local
