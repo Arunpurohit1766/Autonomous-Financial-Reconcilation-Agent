@@ -218,3 +218,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+afra.db
+*.pyc
+__pycache__/
+.pytest_cache/
+.local_storage/
+afra.db
+*.pyc
+__pycache__/
+.pytest_cache/
+.local_storage/
+afra.db
+*.pyc
+__pycache__/
+.pytest_cache/
+.local_storage/

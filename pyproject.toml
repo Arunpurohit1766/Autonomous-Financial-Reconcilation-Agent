@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "afra"
+version = "0.1.0"
+description = "Autonomous Financial Reconciliation Agent"
+authors = [{ name = "Arun Purohit" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0,<0.116.0",
+    "uvicorn[standard]>=0.28.0,<0.33.0",
+    "pydantic>=2.6.0,<2.11.0",
+    "pydantic-settings>=2.2.0,<2.8.0",
+    "sqlalchemy>=2.0.28,<2.1.0",
+    "alembic>=1.13.1,<1.15.0",
+    "python-multipart>=0.0.9,<0.1.0",
+    "httpx>=0.27.0,<0.29.0",
+    "langgraph>=0.2.0,<0.4.0",
+    "langchain-core>=0.3.0,<0.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.1.0,<9.0.0",
+    "pytest-asyncio>=0.23.0,<0.26.0",
+    "pytest-cov>=4.1.0,<6.0.0",
+    "ruff>=0.3.0,<0.8.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
